@@ -15,10 +15,9 @@ def parse_metars_and_write_csv(station, year_start=2005, year_end=today.year):
     data = open(f'data/{station}/data.csv', 'w')
     
     for year in range(year_start, year_end):
-        f = open(f'data/{station}/{year}.txt', 'r')
-        
-        for line in f:
-            print(line, end='')
-            metar_date, metar_code = handle_metar(line.replace('=', ''))
-            metar = MetarClass(metar_date, metar_code)
-            print(metar.time.year)
+        with open(f'data/{station}/{year}.txt', 'r') as f:
+            for line in f:
+                print(line, end='')
+                metar_date, metar_code = handle_metar(line.replace('=', ''))
+                metar = MetarClass(metar_date, metar_code)
+                print(metar.time.year)
