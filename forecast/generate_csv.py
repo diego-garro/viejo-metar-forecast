@@ -1,4 +1,3 @@
-import click
 from datetime import datetime
 
 from models.metar_class import MetarClass
