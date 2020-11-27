@@ -1,3 +1,4 @@
+import click
 from datetime import datetime
 
 from models.metar_class import MetarClass
@@ -18,5 +19,9 @@ def parse_metars_and_write_csv(station, year_start=2005, year_end=today.year):
             for line in f:
                 print(line, end='')
                 metar_date, metar_code = handle_metar(line.replace('=', ''))
-                metar = MetarClass(metar_date, metar_code)
-                print(metar.time.year)
+                try:
+                    metar = MetarClass(metar_date, metar_code)
+                except Exception as error:
+                    click.echo(click.style('\nError: ', fg='red', bold=True), nl=False)
+                    click.echo(click.style(str(error), fg='yellow'))
+                    exit()
