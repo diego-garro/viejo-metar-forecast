@@ -13,7 +13,7 @@ COR\s\d{6,}Z|\s\d{4,5}Z|\d{6,}ZM|\s\d{6}\s|\s\d{6}(Z)?\d+|(\d{6,}(Z)+\s){2}|Z{2,
 9999\s(NSC|NCS)|9999\sNSN|9999\sBSC|CSVOK|CAOK|9999\sSKC|9999\sN\sS\sC
 BECMG\sUNL|BECMG\s(\d{2}\s\d{2}|\d\s\d{3}|\d{3}\s\d|\d{1,4}\s\d{1,4}KT)|BECMG\s\d{4}(BR|FG|RA|TS)
 (\s\d{4}([WENS]{3})\s|\s\d{3}([WENS]{1,3})\s|\s\d{4}\s([WENS]{1,3})\s).+A\d{4}
-WS((R?(/|\s+)?\d{2,}|\s?RWY\d{2,})|(RWY|RYW)(\s+)?\d+|-R\d+)
+WS((R?(/|\s+)?\d{2,}|\s?R[WNU]Y(\s)?\d{2,})|(RWY|RYW)(\s+)?\d+|-R\d+)
 \s(ST|SVCT|SCVT|SCR|SCRT)\d+
 \s(FEWW|GEW|FWE|\sEW\d|FEQW|FFEW|HEW|FE|FE[A-Z]W)\d+
 \s(BKNN|BNK|BKKN|BN|BKM)\d+
