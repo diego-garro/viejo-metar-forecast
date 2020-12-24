@@ -16,7 +16,7 @@ BECMG\sUNL|BECMG\s(\d{2}\s\d{2}|\d\s\d{3}|\d{3}\s\d|\d{1,4}\s\d{1,4}KT)|BECMG\s\
 WS((R?(/|\s+)?\d{2,}|\s?R[WNU]Y(\s)?\d{2,})|(RWY|RYW)(\s+)?\d+|-R\d+)
 \s(ST|SVCT|SCVT|SCR|SCRT)\d+
 \s(FEWW|GEW|FWE|\sEW\d|FEQW|FFEW|HEW|FE|FE[A-Z]W)\d+
-\s(BKNN|BNK|BKKN|BN|BKM)\d+
+\s(BKNN|BNK|BKKN|BN|BKM|BK)\d+
 \s(OCV|OC\d|OVCC|OCVV|OV)\d+
 \s\d{4,6}Z\sNIL
 (A\d+|RE[A-Z]+)\s(RAF|GU|V|W[ET(T)?]|FU|MX)
