@@ -1,9 +1,11 @@
 import click
 from datetime import datetime
+from rich.console import Console
 
 from models.metar_class import MetarClass
 
 today = datetime.now()
+console = Console(width=100)
 
 def handle_metar(code):
     metar_date = code[0:12]
@@ -22,6 +24,6 @@ def parse_metars_and_write_csv(station, year_start=2005, year_end=today.year):
                 try:
                     metar = MetarClass(metar_date, metar_code)
                 except Exception as error:
-                    click.echo(click.style('\nError: ', fg='red', bold=True), nl=False)
-                    click.echo(click.style(str(error), fg='yellow'))
+                    console.print(f"\n[bold rgb(175,0,0)]Error: ", end="")
+                    console.print(f"[italic rgb(175,175,0)]{error}")
                     exit()
