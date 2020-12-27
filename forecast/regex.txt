@@ -6,7 +6,7 @@ BECMG(0|O|\??\s?\?+)|VECMG|BCMG|BECMG/|BECM/|BCMG/|BECOMG|BECGM|BECM\sG
 NOPSIG|NSIG|NPSIG|NOZIG|NOPZIG|NOSOG|MOSIG|NISIG|NOSGI|NOSI\sG|NOSIG0|NSOIG|NOSIIG|\sOSIG
 TMPO|TEMPOO|TMEPO|TEMOP|TEMO|TEMP\sO
 \s(BECMG|NOSIG|TEMPO)\sRE([A-Z]{2,4})
-(A\d{4}|RE([A-Z]{2,4})|BECMG|NOSIG|TEMPO)\s(\d+\s[NSWE]\s|RN|RA\s[NSEW][EW]?|RASH|PCP|VIS|VSBY|DZ|VEL|LTNG|HZ|HZY|MAX|CB|TCU|LGT|LOW|TS|DIST|VEL)\s
+(A\d{4}|RE([A-Z]{2,4})|BECMG|NOSIG|TEMPO)\s(\d+\s[NSWE]\s|RN|RA\s[NSEW][EW]?|RASH|PCP|VIS|VSBY|DZ|VEL|LTNG|HZ|HZY|MAX|CB|TCU|LGT|LOW|LW|TS|DIST|VEL|BR)\s
 \s9999\s\d{2}/\d{2}
 COR\s\d{6,}Z|\s\d{4,5}Z|\d{6,}ZM|\s\d{6}\s|\s\d{6}(Z)?\d+|(\d{6,}(Z)+\s){2}|Z{2,}
 \sRM\s|\sRNK\s|\sRK\s|\sRKM\s|\sRMO\s|\sRML\s|\sRMX\s|\sMRK\s|\sRPM\s
@@ -15,7 +15,7 @@ BECMG\sUNL|BECMG\s(\d{2}\s\d{2}|\d\s\d{3}|\d{3}\s\d|\d{1,4}\s\d{1,4}KT)|BECMG\s\
 (\s\d{4}([WENS]{3})\s|\s\d{3}([WENS]{1,3})\s|\s\d{4}\s([WENS]{1,3})\s).+A\d{4}
 WS((R?(/|\s+)?\d{2,}|\s?R[WNU]Y(\s)?\d{2,})|(RWY|RYW)(\s+)?\d+|-R\d+)
 \s(ST|SVCT|SCVT|STC|SCR|SCRT|SC)\d+
-\s(FEWW|GEW|FWE|\sEW\d|FEQW|FFEW|HEW|FE|FE[A-Z]W)\d+
+\s(FEWW|GEW|FWE|\sEW\d|FEQW|FFEW|HEW|FE|FE[A-Z]W|F[A-Z]EW)\d+
 \s(BKNN|BNK|BKKN|BN|BKM|BK)\d+
 \s(OCV|OC\d|OVCC|OCVV|OV)\d+
 \s\d{4,6}Z\sNIL
