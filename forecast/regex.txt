@@ -20,6 +20,6 @@ WS((R?(/|\s+)?\d{2,}|\s?R[WNU]Y(\s)?\d{2,})|(RWY|RYW)(\s+)?\d+|-R\d+)
 \s(OCV|OC\d|OVCC|OCVV|OV)\d+
 \s\d{4,6}[ZX]\sNIL
 (A\d+|RE[A-Z]+)\s(RAF|GU|V|W[ET(T)?]|FU|MX)
-\s(FEW|SCT|BKN|OVC)\d{2}\s
+\s(FEW|SCT|BKN|OVC)(\d{2}\s|\s\d+\s)
 \d{2}/\d{2}\s\d+\s|\s\d{3}/\d{2}\s|\s\d{2}/\d{3}\s|\d{2}\s/\d{2}|\d{2}/\s\d{2}|(\d{2}/\d{2}\s){2,}
 \s(TEMPO|BECMG)\s\dKMS
