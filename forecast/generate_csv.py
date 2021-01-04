@@ -24,6 +24,6 @@ def parse_metars_and_write_csv(station, year_start=2005, year_end=today.year):
                 try:
                     metar = MetarClass(metar_date, metar_code)
                 except Exception as error:
-                    console.print(f"\n[bold rgb(175,0,0)]Error: ", end="")
+                    console.print(f"\n[bold rgb(175,0,0)]Parser Error: ", end="")
                     console.print(f"[italic rgb(175,175,0)]{error}")
                     exit()
