@@ -4,10 +4,10 @@ from .generate_csv import parse_metars_and_write_csv
 from models.logger import logger
 
 @click.group()
-def cliforecast():
+def forecast():
     pass
 
-@cliforecast.command()
+@forecast.command()
 @click.option('-s', '--station', required=True, type=str, help='The station ICAO code')
 @click.option('-a', '--year-start', type=int, help='The start year to process')
 @click.option('-e', '--year-end', type=int, help='The end year to process')
@@ -20,3 +20,6 @@ def parse_metars(station, year_start, year_end):
         parse_metars_and_write_csv(station.upper(), year_end=year_end)
     else:
         parse_metars_and_write_csv(station.upper())
+
+if __name__ == '__main__':
+    forecast()

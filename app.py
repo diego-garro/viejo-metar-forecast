@@ -1,7 +1,7 @@
 import click
 
 from models.logger import logger
-from forecast import cliforecast
+from forecast import forecast
 
 @click.group()
 def cliapp():
@@ -15,7 +15,7 @@ def hello():
 def adios():
     click.echo('Adiós')
 
-cli = click.CommandCollection(sources=[cliforecast, cliapp])
+cli = click.CommandCollection(sources=[forecast, cliapp])
 
 if __name__ == "__main__":
     cli()

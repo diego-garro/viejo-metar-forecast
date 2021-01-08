@@ -6,12 +6,12 @@ BECMG(0|O|\??\s?\?+)|VECMG|BCMG|BECMG/|BECM/|BCMG/|BECOMG|BECGM|BECM\sG
 NOPSIG|NSIG|NPSIG|NOZIG|NOPZIG|NOSOG|MOSIG|NISIG|NOSGI|NOSI\sG|NOSIG0|NSOIG|NOSIIG|\sOSIG
 TMPO|TEMPOO|TMEPO|TEMOP|TEMO|TEMP\sO
 \s(BECMG|NOSIG|TEMPO)\sRE([A-Z]{2,4})
+BECMG\sUNL|BECMG\s(\d{2}\s\d{2}|\d\s\d{3}|\d{3}\s\d|\d{1,4}\s\d{1,4}KT)|BECMG\s\d{4}(BR|FG|RA|TS)
 (A\d{4}|RE([A-Z]{2,4})|BECMG|NOSIG|TEMPO)\s(\d+\s[NSWE]\s|RN|RA\s[NSEW][EW]?|RASH|PCP|VIS|VSBY|DZ|VEL|LTNG|HZ|HZY|MAX|CB|TCU|LGT|LOW|LW|TS|DIST|VEL|BR)\s
 \s9999\s\d{2}/\d{2}|\s\d+[A-UW-Z]+\d+\s|\s\d{3}\s
 COR\s\d{6,}Z|\s\d{4,5}Z|\d{6,}ZM|\s\d{6}\s|\s\d{6}(Z)?\d+|(\d{6,}([ZX])+\s?){2}|Z{2,}
 \sRM[OLXR]?\s|\sRNK\s|\sRK\s|\sRKM\s|\sMRK\s|\sRPM\s|\sTMK\s
 9999\s(NSC|NCS)|9999\sNSN|9999\sBSC|CSVOK|CAOK|VACOK|9999\sSKC|9999\sN\sS\sC
-BECMG\sUNL|BECMG\s(\d{2}\s\d{2}|\d\s\d{3}|\d{3}\s\d|\d{1,4}\s\d{1,4}KT)|BECMG\s\d{4}(BR|FG|RA|TS)
 (\s\d{4}([WENS]{3})\s|\s\d{3}([WENS]{1,3})\s|\s\d{4}\s([WENS]{1,3})\s).+A\d{4}
 WS((R?(/|\s+)?\d{2,}|\s?R[WNU]Y(\s)?\d{2,})|(RWY|RYW)(\s+)?\d+|-R\d+)
 \s(ST|SVCT|SCVT|STC|SCR|SCRT|SC)\d+
@@ -21,5 +21,5 @@ WS((R?(/|\s+)?\d{2,}|\s?R[WNU]Y(\s)?\d{2,})|(RWY|RYW)(\s+)?\d+|-R\d+)
 \s\d{4,6}[ZX]\sNIL
 (A\d+|RE[A-Z]+)\s(RAF|GU|V|W[ET(T)?]|FU|MX)
 \s(FEW|SCT|BKN|OVC)(\d{2}\s|\s\d+\s)
-\d{2}/\d{2}\s\d+\s|\s\d{3}/\d{2}\s|\s\d{2}/\d{3}\s|\d{2}\s/\d{2}|\d{2}/\s\d{2}|(\d{2}/\d{2}\s){2,}
+\d{2}/\d{2}\s\d+(\s|=)|\s\d{3}/\d{2}\s|\s\d{2}/\d{3}\s|\d{2}\s/\d{2}|\d{2}/\s\d{2}|(\d{2}/\d{2}\s){2,}
 \s(TEMPO|BECMG)\s\dKMS
