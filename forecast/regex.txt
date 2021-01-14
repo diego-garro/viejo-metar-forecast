@@ -1,4 +1,4 @@
-\d+/\d+KT|\s\d{4}(G\d{2})?KT\s|(\d{4,5}|\s\d{5}G\d{2})\sKT|\s\d{5}(G\d{2})?\s|99999KT|\s\d+(G\d+)?(KTKT|K[KRLM]|T[TKR])\s|\d{3}V\d{4}|\d{4}V\d{3}|\s\d{2}V\d{3}|\d{3}V\d{2}\s|\s\d{6,}KT\s
+\d+/\d+KT|\s\d{4}(G\d{2})?KT\s|(\d{4,5}|\s\d{5}G\d{2})\sKT|\s\d{5}(G\d{2})?\s|99999KT|\d{3}V\d{4}|\d{4}V\d{3}|\s\d{2}V\d{3}|\d{3}V\d{2}\s|\s\d{6,}KT\s
 (\s\d{2}/\d{2}\s){2,}|\s\d{5}\s|\sA\d+/(\s|RMK|.+)|A\d{5,}|A\d{3}\s
 (\s(FEW|SCT|BKN|OVC)(\s\d{3}.|\d{1,2}\s\d{1,2}.|\d{3}\s[CBTU]{2,3}))\s\.+A\d+
 (A\d{4}|RE([A-Z]{2,4}))\s(FEW|SCT|BKN|OVC|PCPN|TRACE|TRAZAS|TACE|TRCE|TRZAS|TAZAS|TRECE|CB|DZ|RN|HZ|HZY|DU|VSBY|DST|VIS|RFGS|TCU|ST|POLVO)
@@ -8,7 +8,7 @@ TMPO|TEMPOO|TMEPO|TEMOP|TEMO|TEMP\sO
 \s(BECMG|NOSIG|TEMPO)\sRE([A-Z]{2,4})
 BECMG\sUNL|BECMG\s(\d{2}\s\d{2}|\d\s\d{3}|\d{3}\s\d|\d{1,4}\s\d{1,4}KT)|BECMG\s\d{4}(BR|FG|RA|TS)
 (A\d{4}|RE([A-Z]{2,4})|BECMG|NOSIG|TEMPO)\s(\d+\s[NSWE]\s|RN|RA\s[NSEW][EW]?|RASH|PCP|VIS|VSBY|DZ|VEL|LTNG|HZ|HZY|MAX|CB|TCU|LGT|LOW|LW|TS|DIST|VEL|BR)\s
-\s9999\s\d{2}/\d{2}|\s\d+[A-UW-Z]+\d+\s|\s\d{3}\s
+\s9999\s\d{2}/\d{2}|\s\d+[A-UW-Z]+\d+\s|\s\d{3}\s|\s\d+(G\d+)?(KTKT|K[KRLM]|T[TKR])\s
 COR\s(\d{6,}Z|M)|\s\d{4,5}Z|\d{6,}ZM|\s\d{6}\s|\s\d{6}(Z)?\d+|(\d{6,}([ZX])+\s?){2}|Z{2,}
 \sRM[OLXR]?\s|\sRNK\s|\sRK\s|\sRKM\s|\sMRK\s|\sRPM\s|\sTMK\s
 9999\s(NSC|NCS)|9999\sNSN|9999\sBSC|CSVOK|CAOK|VACOK|9999\sSKC|9999\sN\sS\sC
