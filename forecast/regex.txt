@@ -16,10 +16,10 @@ COR\s(\d{6,}Z|M)|\s\d{4,5}Z|\d{6,}ZM|\s\d{6}\s|\s\d{6}(Z)?\d+|(\d{6,}([ZX])+\s?)
 WS((R?(/|\s+)?\d{2,}|\s?R[WNU]Y(\s)?\d{2,})|(RWY|RYW)(\s+)?\d+|-R\d+)
 \s(ST|SVCT|SCVT|STC|SCR|SCRT|SC)\d+
 \s(FEWW|GEW|FWE|\sEW\d|FEQW|FFEW|HEW|FE|FE[A-Z]W|F[A-Z]EW)\d+
-\s(BKNN|BNK|BKKN|BN|BKM|BK)\d+
+\s(BKNN|BNK|BKKN|BN|BKM|BK|BKB)\d+
 \s(OCV|OC\d|OVCC|OCVV|OV)\d+
-\s\d{4,6}[ZX]\sNIL
+\s\d{4,6}[ZX]\sNIL|(METAR|SPECI)\s[A-Z]{4}(\s\d+)?=
 (A\d+|RE[A-Z]+)\s(RAF|GU|V|W[ET(T)?]|FU|MX)
 \s(FEW|SCT|BKN|OVC)(\d{2}\s|\s\d+\s|\s?(CB|TCU))
-\d{2}/\d{2}\s\d+(\s|=)|\s\d{3}/\d{2}\s|\s\d{2}/\d{3}\s|\d{2}\s/\d{2}|\d{2}/\s\d{2}|(\d{2}/\d{2}\s){2,}
+\s\d{2}\s\d{2}|\d{2}/\d{2}\s\d+(\s|=)|\s\d{3}/\d{2}\s|\s\d{2}/\d{3}\s|\d{2}\s/\d{2}|\d{2}/\s\d{2}|(\d{2}/\d{2}\s){2,}
 \s(TEMPO|BECMG)\s\dKM(S)?

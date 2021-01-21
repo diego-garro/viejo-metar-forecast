@@ -8,8 +8,9 @@ def cliapp():
     pass
 
 @cliapp.command()
-def hello():
-    click.echo('Hola mundo')
+@click.argument('name', type=click.STRING)
+def hello(name):
+    click.echo(f'Hola mundo, {name.upper()}')
 
 @cliapp.command()
 def adios():

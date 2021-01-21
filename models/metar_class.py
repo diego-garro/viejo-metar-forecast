@@ -17,6 +17,7 @@ convective = {
 class MetarClass(Metar.Metar):
     
     NaN = 'NaN'
+    null = 'null'
     
     def __init__(self, date, metar_text):
         super().__init__(metar_text, month=date.month, year=date.year)
@@ -84,3 +85,93 @@ class MetarClass(Metar.Metar):
                 if layer[1].value() < 6000.0:
                     self.cavok = 0
         return sky_conditions
+    
+    def _return_value_else_null(self, var):
+        return str(var.value()) if var != None else MetarClass.null
+    
+    def _return_weather_else_null(self, *args):
+        for arg in args:
+            for tup in self.weather:
+                if arg in tup:
+                    return arg
+        return MetarClass.null
+    
+    def _return_sky_layer_or_null(self, index, parameter='cover'):
+        """Return the value of interest in the sky variable of METAR.
+
+        Args:
+            index (int): Index of the layer to search.
+            parameter (str, optional): Parameter of the layer to extract. Defaults to 'cover'.
+                options: 'height', 'cloud'
+        """
+        if len(self.sky) > index:
+            if parameter == 'cover':
+                return self.sky[index][0]
+            elif parameter == 'height':
+                if self.sky[index][1] != None:
+                    return str(self.sky[index][1].value())
+                else:
+                    return MetarClass.null
+            elif parameter == 'cloud':
+                if self.sky[index][2] is None:
+                    return MetarClass.null
+                return self.sky[index][2]
+        return MetarClass.null
+    
+    def _return_temperature_or_null(self, type='absolute'):
+        """Return the temperature absolute or dewpoint or null.
+
+        Args:
+            type (str, optional): Type of temperature. Defaults to 'absolute'.
+                options: 'dewpoint'
+        """
+        if type == 'absolute':
+            if self.temp is not None:
+                return str(self.temp.value())
+        elif type == 'dewpoint':
+            if self.dewpt is not None:
+                return str(self.dewpt.value())
+        return MetarClass.null
+    
+    def _return_pressure_or_null(self):
+        if self.press is not None:
+            return str(self.press.value())
+        return MetarClass.null
+    
+    def to_dict(self):
+        d = {
+            "date": datetime.strftime(self.time, "%Y%m%d%H%M"),
+            "year": str(self.time.year),
+            "month": str(self.time.month),
+            "day": str(self.time.day),
+            "hour": str(self.time.hour),
+            "minute": str(self.time.minute),
+            "type": self.type,
+            "station": self.station_id,
+            "wind_direction": self._return_value_else_null(self.wind_dir),
+            "wind_speed": self._return_value_else_null(self.wind_speed),
+            "wind_gust": self._return_value_else_null(self.wind_gust),
+            "visibility": self._return_value_else_null(self.vis),
+            "weather_intensity": self._return_weather_else_null('+', '-', 'VC'),
+            "weather_description": self._return_weather_else_null('SH', 'TS', 'BC'), 
+            "weather_precipitation": self._return_weather_else_null('RA', 'DZ'),
+            "weather_obscuration" : self._return_weather_else_null('FG', 'BR'),
+            "sky_layer1_cover": self._return_sky_layer_or_null(0),
+            "sky_layer1_height": self._return_sky_layer_or_null(0, parameter='height'),
+            "sky_layer1_cloud": self._return_sky_layer_or_null(0, parameter='cloud'),
+            "sky_layer2_cover": self._return_sky_layer_or_null(1),
+            "sky_layer2_height": self._return_sky_layer_or_null(1, parameter='height'),
+            "sky_layer2_cloud": self._return_sky_layer_or_null(1, parameter='cloud'),
+            "sky_layer3_cover": self._return_sky_layer_or_null(2),
+            "sky_layer3_height": self._return_sky_layer_or_null(2, parameter='height'),
+            "sky_layer3_cloud": self._return_sky_layer_or_null(2, parameter='cloud'),
+            "sky_layer4_cover": self._return_sky_layer_or_null(3),
+            "sky_layer4_height": self._return_sky_layer_or_null(3, parameter='height'),
+            "sky_layer4_cloud": self._return_sky_layer_or_null(3, parameter='cloud'),
+            "temperature": self._return_temperature_or_null(),
+            "dewpoint": self._return_temperature_or_null(type='dewpoint'),
+            "pressure": self._return_pressure_or_null(),
+            "code": self.code.strip(),
+        }
+        
+        return d
