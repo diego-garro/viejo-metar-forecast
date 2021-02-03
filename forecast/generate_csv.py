@@ -1,15 +1,13 @@
 import os
 from datetime import datetime
-from rich.console import Console
 from rich.progress import track
-from rich.theme import Theme
 
 from models.metar_class import MetarClass
+from .console import console
 
 today = datetime.now()
-console = Console(width=100, theme=Theme({'repr.number': 'not bold'}))
 
-def handle_metar(code):
+def _handle_metar(code):
     metar_date = code[0:12]
     metar = code[13:]
     date = datetime.strptime(metar_date, '%Y%m%d%H%M')
@@ -24,7 +22,7 @@ def parse_metars_from_file(station, start_year=2005, end_year=today.year):
         message = f'{station}: {year}...'
         for n in track(range(len(lines)), description=message):
             #console.print(f'[white]{lines[n]}', end='')
-            metar_date, metar_code = handle_metar(lines[n].replace('=', ''))
+            metar_date, metar_code = _handle_metar(lines[n].replace('=', ''))
             try:
                 metar = MetarClass(metar_date, metar_code)
             except Exception as error:
